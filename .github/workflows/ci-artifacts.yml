@@ -86,7 +86,7 @@ jobs:
         nr: [9, 6, 13, 0, 8, 5, 2, 16, 15, 11, 10, 1, 7, 3, 14, 12, 4]
     steps:
       - name: download minimal-sdk artifact
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v4.1.7
         with:
           name: minimal-sdk
           path: ${{github.workspace}}
@@ -94,7 +94,7 @@ jobs:
         shell: bash
         run: mkdir -p minimal-sdk && tar -C minimal-sdk -xJf git-sdk-64-minimal.tar.xz
       - name: download git artifacts
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v4.1.7
         with:
           name: git-artifacts
           path: ${{github.workspace}}
@@ -126,7 +126,7 @@ jobs:
     needs: [test-minimal-sdk]
     steps:
       - name: download minimal-sdk artifact
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v4.1.7
         with:
           name: minimal-sdk
           path: ${{github.workspace}}
